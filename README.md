@@ -15,6 +15,8 @@ As a part of [Alexia Larchen's](https://www.researchgate.net/profile/Alexia-Larc
 * After starting the streamlit service, you will be redirected to `localhost:8501`.
 * Upload an image.
 * Use maximize feature to enlarge the image.
+* All the images uploaded will be stored in `temp` and `upload_images` directories.
+* *The final image is not stored.*
 
 ## Debugging errors
 In case of any errors, create an issue and I'll try to solve at the earliest. 
