@@ -2,6 +2,8 @@
 
 As a part of [Alexia Larchen's](https://www.researchgate.net/profile/Alexia-Larchen) experimentation. 
 
+> Note: use python3.8 asthe dependencies are not to support python3.8+
+
 ## Steps to deploy the app
 * Clone the repository and `cd` into that directory.
 * Open a virtual environment in a server or localhost.
