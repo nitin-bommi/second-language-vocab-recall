@@ -11,6 +11,11 @@ As a part of [Alexia Larchen's](https://www.researchgate.net/profile/Alexia-Larc
 * Download the `.h5` model from [here](https://drive.google.com/file/d/1L4UZv-_VtWP2yWkTQZo9OIP5c4T8vl5F/view?usp=sharing).
 * Run the application via `streamlit run main.py`
 
+## Using the app
+* After starting the streamlit service, you will be redirected to `localhost:8501`.
+* Upload an image.
+* Use maximize feature to enlarge the image.
+
 ## Debugging errors
 In case of any errors, create an issue and I'll try to solve at the earliest. 
 
