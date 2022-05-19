@@ -29,6 +29,7 @@ translation = {
 # Load the image
 def load_image(image_file):
 	img = cv2.imread(image_file)
+	img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 	return img
 
 # Save the image (caching the function)
@@ -75,12 +76,16 @@ if image_file is not None:
 	detections_df = {'english': [], 'dutch': []}
 	for eachObject in detections:
 		box = eachObject['box_points']
-		label = eachObject['name'] + ' : ' + translation[eachObject['name']]
+		if eachObject['name'] in translation:
+			label = eachObject['name'] + ' : ' + translation[eachObject['name']]
+			detections_df['dutch'].append(translation[eachObject['name']])
+		else:
+			label = eachObject['name']
+			detections_df['dutch'].append('-')
 		cv2.rectangle(img, pt1=(box[0], box[1]), pt2=(box[2], box[3]), color=(255,0,0), thickness=10)
 		cv2.putText(img, label, (box[0]+100, box[1]+100), cv2.FONT_HERSHEY_SIMPLEX, 3, (0, 255, 255), 6)
 		detections_df['english'].append(eachObject['name'])
-		detections_df['dutch'].append(translation[eachObject['name']])
-
+		
 	# Display results
 	st.dataframe(detections_df)
 	st.image(img, width=720)
